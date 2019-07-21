@@ -1,0 +1,75 @@
+﻿<form class="form-horizontal" action='' method="POST">
+    <fieldset>
+        <div id="legend">
+            <legend class="">Add Student</legend>
+        </div>
+        <div class="control-group">
+            <!-- Username -->
+            <label class="control-label" for="name">Name</label>
+            <div class="controls">
+                <input type="text" id="name" name="name" placeholder="Enter Student Name" required="required" class="input-xlarge">
+                @*<p class="help-block">Username can contain any letters or numbers, without spaces</p>*@
+            </div>
+        </div>
+
+        <div class="control-group">
+            <!-- Date -->
+            <label class="control-label" for="dateOfBirth">Date Of Birth</label>
+            <div class="controls">
+                <input type="date" id="dateofbirth" name="dateofbirth" required="required" placeholder="Date Of Birth" class="input-xlarge">
+                @*<p class="help-block">Please provide your E-mail</p>*@
+            </div>
+        </div>
+
+        <div class="control-group">
+            <!-- Mobile-->
+            <label class="control-label" for="mobile">Mobile</label>
+            <div class="controls">
+                <input type="number" id="mobile" name="mobile" placeholder="Enter Mobile Number" required="required" class="input-xlarge">
+                @*<p class="help-block">Password should be at least 4 characters</p>*@
+            </div>
+        </div>
+
+        <div class="control-group">
+            <!-- Address-->
+            <label class="control-label" for="address">Address</label>
+            <div class="controls">
+                <textarea id="address" name="address" placeholder="Enter Your Address" class="input-xlarge"></textarea>
+                @*<input type="" id="mobile" name="mobile" placeholder="Enter Mobile Number" required="required" class="input-xlarge">*@
+                @*<p class="help-block">Password should be at least 4 characters</p>*@
+            </div>
+        </div>
+
+        <div class="control-group">
+            <!-- Faculty-->
+            <label class="control-label" for="faculty">Faculty</label>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose Faculty</button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                </ul>
+                @*<p class="help-block">Password should be at least 4 characters</p>*@
+            </div>
+        </div>
+
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile_image"
+                       aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <!-- Button -->
+            <div class="controls">
+                <button class="btn btn-success" id="register">Register</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

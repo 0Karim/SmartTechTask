@@ -1,0 +1,10 @@
+﻿@model CRUD_smarttech.ViewModels.StudentViewModel
+@{
+    ViewBag.Title = "EditStudent";
+}
+
+<h2>EditStudent</h2>
+
+@{
+    Html.RenderPartial("~/Views/PartialViews/StudentForm.cshtml" , Model);
+}

@@ -1,0 +1,86 @@
+﻿@model CRUD_smarttech.ViewModels.StudentViewModel
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal" id="sform">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", id = "name" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateOfBirth, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @if (Model.DateOfBirth.HasValue)
+                {
+                    @Html.EditorFor(model => model.DateOfBirth , new { htmlAttributes = new { @class = "form-control", id = "dateOfBirth" , @Value = Model.DateOfBirth} }) 
+                }
+                else
+                {
+                    @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control", id = "dateOfBirth" } }) 
+                }
+                @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control", id = "mobile" } })
+                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", id = "address" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.faculties, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.FacultyID, new SelectList(Model.faculties, "ID", "FacultyName"), "Select Faculty", new { @class = "form-control", id = "facultyid" })
+
+                @Html.ValidationMessageFor(model => model.FacultyID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "", type = "file", accept = "image/*", id = "image" , @Value=Model.Image} })
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                <div class="card">
+                    <img class="img-thumbnail" id="preview_image" src="" /> @*~/images/student3.jpg*@
+                </div>
+            </div>
+        </div>
+
+        @Html.HiddenFor(model => model.ID, new { @Value = Model.ID, id = "student_id" })
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" value="Save" class="btn btn-success" id="btn_register" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Home Page", "Index", null, new { @class = "btn btn-primary" })
+</div>
+
+
+<script src="~/Scripts/student_scripte/form_upload_image_student.js"></script>
